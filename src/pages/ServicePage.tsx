@@ -9,7 +9,7 @@ import ContactForm from '@/components/ContactForm';
 import { getServiceBySlug } from '@/data/services';
 import { getTestimonialsByService } from '@/data/testimonials';
 
-// Import all service images
+// Import all service images - Hero
 import limpezaImg from '@/assets/services/limpeza.jpg';
 import bombeiroImg from '@/assets/services/bombeiro.jpg';
 import carregadoresImg from '@/assets/services/carregadores.jpg';
@@ -19,7 +19,17 @@ import segurancaImg from '@/assets/services/seguranca.jpg';
 import staffImg from '@/assets/services/staff.jpg';
 import locacoesImg from '@/assets/services/locacoes.jpg';
 
-const serviceImages: Record<string, string> = {
+// Import all service images - Detail
+import limpezaDetailImg from '@/assets/services/limpeza-detail.jpg';
+import bombeiroDetailImg from '@/assets/services/bombeiro-detail.jpg';
+import carregadoresDetailImg from '@/assets/services/carregadores-detail.jpg';
+import tradutoresDetailImg from '@/assets/services/tradutores-detail.jpg';
+import recepcionistaDetailImg from '@/assets/services/recepcionista-detail.jpg';
+import segurancaDetailImg from '@/assets/services/seguranca-detail.jpg';
+import staffDetailImg from '@/assets/services/staff-detail.jpg';
+import locacoesDetailImg from '@/assets/services/locacoes-detail.jpg';
+
+const serviceHeroImages: Record<string, string> = {
   limpeza: limpezaImg,
   bombeiro: bombeiroImg,
   carregadores: carregadoresImg,
@@ -28,6 +38,17 @@ const serviceImages: Record<string, string> = {
   seguranca: segurancaImg,
   staff: staffImg,
   locacoes: locacoesImg,
+};
+
+const serviceDetailImages: Record<string, string> = {
+  limpeza: limpezaDetailImg,
+  bombeiro: bombeiroDetailImg,
+  carregadores: carregadoresDetailImg,
+  tradutores: tradutoresDetailImg,
+  recepcionista: recepcionistaDetailImg,
+  seguranca: segurancaDetailImg,
+  staff: staffDetailImg,
+  locacoes: locacoesDetailImg,
 };
 
 const ServicePage = () => {
@@ -49,7 +70,8 @@ const ServicePage = () => {
   }
 
   const testimonials = getTestimonialsByService(service.id);
-  const serviceImage = serviceImages[service.id];
+  const heroImage = serviceHeroImages[service.id];
+  const detailImage = serviceDetailImages[service.id];
 
   return (
     <div className="min-h-screen">
@@ -59,7 +81,7 @@ const ServicePage = () => {
       <section className="pt-20">
         <div className="relative h-[50vh] min-h-[400px] overflow-hidden">
           <img
-            src={serviceImage}
+            src={heroImage}
             alt={service.title}
             className="w-full h-full object-cover"
           />
@@ -127,7 +149,7 @@ const ServicePage = () => {
             <div className="order-1 lg:order-2">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
                 <img
-                  src={serviceImage}
+                  src={detailImage}
                   alt={`${service.title} - Detalhe`}
                   className="w-full h-full object-cover"
                 />

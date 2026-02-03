@@ -13,6 +13,10 @@ import saudosaImg2 from '@/assets/feedbacks/saudosa-maloca-2.webp';
 import saudosaImg3 from '@/assets/feedbacks/saudosa-maloca-3.webp';
 import saudosaImg4 from '@/assets/feedbacks/saudosa-maloca-4.webp';
 
+// Import images - Shopping Frei Caneca
+import freiCanecaImg1 from '@/assets/feedbacks/shopping-frei-caneca-1.webp';
+import freiCanecaImg2 from '@/assets/feedbacks/shopping-frei-caneca-2.webp';
+
 interface ClientFeedback {
   id: number;
   clientName: string;
@@ -35,6 +39,13 @@ const clientFeedbacks: ClientFeedback[] = [
     eventType: 'Festival de Samba',
     feedback: 'Trabalhar com a Confidence Eventos no nosso evento foi uma experiência de total tranquilidade. A qualidade da mão de obra é notável. Desde a segurança, que manteve tudo sob controle com discrição e eficiência, até os carregadores e a equipe de limpeza, que foram incrivelmente ágeis e organizados. Eles são sinônimo de profissionalismo e pontualidade. Agradecemos por tornarem a logística do nosso evento impecável!',
     images: [saudosaImg1, saudosaImg2, saudosaImg3, saudosaImg4]
+  },
+  {
+    id: 3,
+    clientName: 'Cliente Do Evento Do Shopping Frei Caneca',
+    eventType: 'Congresso Nacional de Crédito no Agronegócio',
+    feedback: 'Vocês arrasaram no serviço! Todos muito educados, atenciosos, tudo feito com muita atenção e capricho. Seguranças extremamente educados e solícitos. Limpeza atenciosa e extremamente caprichosa. Bombeiro sempre com atenção, circulando pelo salão. Carregadores "ponta firma", tudo que pedi eles me ajudaram! Trabalho há mais de 15 anos com evento e é muito difícil encontrar empresa de prestação de serviços-staffs como vocês. Parabéns! Com certeza estaremos juntos novamente em 2026!',
+    images: [freiCanecaImg1, freiCanecaImg2]
   }
 ];
 

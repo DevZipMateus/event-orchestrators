@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
-import { useParams, Navigate, Link } from 'react-router-dom';
+import { useParams, useLocation, Navigate } from 'react-router-dom';
 import { ArrowRight, Check } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import TestimonialCarousel from '@/components/TestimonialCarousel';
 import ContactForm from '@/components/ContactForm';
-import { getServiceBySlug, Service } from '@/data/services';
+import { getServiceBySlug } from '@/data/services';
 import { getTestimonialsByService } from '@/data/testimonials';
 
 // Import all service images
@@ -31,7 +31,13 @@ const serviceImages: Record<string, string> = {
 };
 
 const ServicePage = () => {
-  const { slug } = useParams<{ slug: string }>();
+  const { slug: paramSlug } = useParams<{ slug: string }>();
+  const location = useLocation();
+  
+  // Get slug from URL path (remove leading slash)
+  const pathSlug = location.pathname.slice(1);
+  const slug = paramSlug || pathSlug;
+  
   const service = slug ? getServiceBySlug(slug) : undefined;
 
   useEffect(() => {

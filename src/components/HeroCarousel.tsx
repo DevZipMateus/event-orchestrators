@@ -44,7 +44,7 @@ const HeroCarousel = () => {
   const imageUrl = serviceImages[currentService.id];
 
   return (
-    <section className="relative h-[80vh] min-h-[600px] overflow-hidden">
+    <section className="relative h-[60vh] sm:h-[70vh] md:h-[75vh] lg:h-[80vh] min-h-[400px] sm:min-h-[500px] lg:min-h-[600px] overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
@@ -58,19 +58,19 @@ const HeroCarousel = () => {
 
       {/* Content */}
       <div className="relative h-full section-container flex items-center">
-        <div className="max-w-2xl animate-slide-in-left" key={currentIndex}>
-          <p className="text-primary-foreground/80 text-lg mb-4 font-medium">
+        <div className="max-w-xl sm:max-w-xl md:max-w-2xl lg:max-w-3xl animate-slide-in-left pr-4 sm:pr-0" key={currentIndex}>
+          <p className="text-primary-foreground/80 text-sm sm:text-base lg:text-lg mb-2 sm:mb-4 font-medium">
             Confidence Eventos
           </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground mb-6 leading-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold text-primary-foreground mb-3 sm:mb-4 lg:mb-6 leading-tight">
             {currentService.title}
           </h1>
-          <p className="text-xl text-primary-foreground/90 mb-8">
+          <p className="text-base sm:text-lg lg:text-xl text-primary-foreground/90 mb-4 sm:mb-6 lg:mb-8 line-clamp-3 sm:line-clamp-none">
             {currentService.heroTagline}
           </p>
           <Link
             to={`/${currentService.slug}`}
-            className="inline-flex items-center gap-2 bg-primary-foreground text-foreground px-8 py-4 rounded-lg font-semibold hover:bg-primary-foreground/90 transition-colors"
+            className="inline-flex items-center gap-2 bg-primary-foreground text-foreground px-5 py-3 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded-lg font-semibold hover:bg-primary-foreground/90 transition-colors text-sm sm:text-base"
           >
             Saiba mais
           </Link>
@@ -80,30 +80,30 @@ const HeroCarousel = () => {
       {/* Navigation */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-primary-foreground/20 hover:bg-primary-foreground/40 backdrop-blur-sm transition-colors"
+        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-primary-foreground/20 hover:bg-primary-foreground/40 backdrop-blur-sm transition-colors"
         aria-label="Slide anterior"
       >
-        <ChevronLeft className="w-6 h-6 text-primary-foreground" />
+        <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-primary-foreground/20 hover:bg-primary-foreground/40 backdrop-blur-sm transition-colors"
+        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-primary-foreground/20 hover:bg-primary-foreground/40 backdrop-blur-sm transition-colors"
         aria-label="Próximo slide"
       >
-        <ChevronRight className="w-6 h-6 text-primary-foreground" />
+        <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
       </button>
 
       {/* Dots */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
+      <div className="absolute bottom-4 sm:bottom-6 lg:bottom-8 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2">
         {services.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-2 h-2 rounded-full transition-all ${
+            className={`h-1.5 sm:h-2 rounded-full transition-all ${
               index === currentIndex
-                ? 'w-8 bg-primary-foreground'
-                : 'bg-primary-foreground/40 hover:bg-primary-foreground/60'
+                ? 'w-6 sm:w-8 bg-primary-foreground'
+                : 'w-1.5 sm:w-2 bg-primary-foreground/40 hover:bg-primary-foreground/60'
             }`}
             aria-label={`Ir para slide ${index + 1}`}
           />

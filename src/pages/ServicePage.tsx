@@ -83,7 +83,8 @@ const ServicePage = () => {
           <img
             src={heroImage}
             alt={service.title}
-            className="w-full h-full object-cover object-top"
+            className="w-full h-full object-cover"
+            style={{ objectPosition: 'center 30%' }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/60 to-foreground/40" />
           

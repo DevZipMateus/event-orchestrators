@@ -7,6 +7,7 @@ import HeroCarousel from '@/components/HeroCarousel';
 import ServiceCard from '@/components/ServiceCard';
 import ContactForm from '@/components/ContactForm';
 import { services } from '@/data/services';
+import servicesPerson from '@/assets/services-person.png';
 
 // Partner logos (placeholder)
 const partners = [
@@ -51,10 +52,27 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service) => (
-              <ServiceCard key={service.id} service={service} />
-            ))}
+          <div className="flex flex-col lg:flex-row gap-8 items-center">
+            {/* Person Image with Rotated Square */}
+            <div className="relative flex-shrink-0 hidden lg:block">
+              {/* Rotated Square Background */}
+              <div 
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary rotate-45 -z-10"
+              />
+              {/* Person Image */}
+              <img 
+                src={servicesPerson} 
+                alt="Profissional de eventos" 
+                className="relative z-10 w-72 h-auto object-contain"
+              />
+            </div>
+
+            {/* Services Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 flex-1">
+              {services.map((service) => (
+                <ServiceCard key={service.id} service={service} />
+              ))}
+            </div>
           </div>
         </div>
       </section>

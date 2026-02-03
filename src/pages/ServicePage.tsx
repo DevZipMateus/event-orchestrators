@@ -49,13 +49,7 @@ const ServicePage = () => {
   }
 
   const testimonials = getTestimonialsByService(service.id);
-  const heroImage = serviceImages[service.id];
-
-  // Get a secondary image (use the next service's image for variety)
-  const serviceIds = Object.keys(serviceImages);
-  const currentIndex = serviceIds.indexOf(service.id);
-  const secondaryIndex = (currentIndex + 1) % serviceIds.length;
-  const secondaryImage = serviceImages[serviceIds[secondaryIndex]];
+  const serviceImage = serviceImages[service.id];
 
   return (
     <div className="min-h-screen">
@@ -65,7 +59,7 @@ const ServicePage = () => {
       <section className="pt-20">
         <div className="relative h-[50vh] min-h-[400px] overflow-hidden">
           <img
-            src={heroImage}
+            src={serviceImage}
             alt={service.title}
             className="w-full h-full object-cover"
           />
@@ -133,7 +127,7 @@ const ServicePage = () => {
             <div className="order-1 lg:order-2">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
                 <img
-                  src={secondaryImage}
+                  src={serviceImage}
                   alt={`${service.title} - Detalhe`}
                   className="w-full h-full object-cover"
                 />

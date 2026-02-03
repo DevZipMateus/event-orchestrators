@@ -113,7 +113,8 @@ const Index = () => {
             >
               {/* Rotated Square Background */}
               <motion.div 
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary rotate-45 -z-10"
+                className="absolute top-1/2 left-1/2 w-64 h-64 bg-primary -z-10"
+                style={{ x: '-50%', y: '-50%' }}
                 animate={{ rotate: [45, 50, 45] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               />

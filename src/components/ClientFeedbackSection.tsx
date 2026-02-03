@@ -2,10 +2,16 @@ import { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-// Import images
+// Import images - Thiago Rosinhole
 import feedbackImg1 from '@/assets/feedbacks/thiago-rosinhole-1.webp';
 import feedbackImg2 from '@/assets/feedbacks/thiago-rosinhole-2.webp';
 import feedbackImg3 from '@/assets/feedbacks/thiago-rosinhole-3.webp';
+
+// Import images - Saudosa Maloca
+import saudosaImg1 from '@/assets/feedbacks/saudosa-maloca-1.webp';
+import saudosaImg2 from '@/assets/feedbacks/saudosa-maloca-2.webp';
+import saudosaImg3 from '@/assets/feedbacks/saudosa-maloca-3.webp';
+import saudosaImg4 from '@/assets/feedbacks/saudosa-maloca-4.webp';
 
 interface ClientFeedback {
   id: number;
@@ -23,20 +29,12 @@ const clientFeedbacks: ClientFeedback[] = [
     feedback: 'Prezada Carolina! Gostaríamos de expressar nossa sincera gratidão pela excelente prestação de serviços de segurança que sua empresa nos forneceu para o evento. Sua equipe demonstrou grande profissionalismo e dedicação. O trabalho realizado foi impecável, garantindo que tudo ocorresse de forma segura e tranquila. Vocês fizeram um ótimo trabalho! Agradecemos a parceria e esperamos trabalhar juntos novamente em breve.',
     images: [feedbackImg1, feedbackImg2, feedbackImg3]
   },
-  // Placeholder for future feedbacks - currently showing the same one 3 times as requested
   {
     id: 2,
-    clientName: 'Cliente Da Exposição Do Thiago Rosinhole',
-    eventType: 'Exposição de Arte',
-    feedback: 'Prezada Carolina! Gostaríamos de expressar nossa sincera gratidão pela excelente prestação de serviços de segurança que sua empresa nos forneceu para o evento. Sua equipe demonstrou grande profissionalismo e dedicação. O trabalho realizado foi impecável, garantindo que tudo ocorresse de forma segura e tranquila. Vocês fizeram um ótimo trabalho! Agradecemos a parceria e esperamos trabalhar juntos novamente em breve.',
-    images: [feedbackImg2, feedbackImg3, feedbackImg1]
-  },
-  {
-    id: 3,
-    clientName: 'Cliente Da Exposição Do Thiago Rosinhole',
-    eventType: 'Exposição de Arte',
-    feedback: 'Prezada Carolina! Gostaríamos de expressar nossa sincera gratidão pela excelente prestação de serviços de segurança que sua empresa nos forneceu para o evento. Sua equipe demonstrou grande profissionalismo e dedicação. O trabalho realizado foi impecável, garantindo que tudo ocorresse de forma segura e tranquila. Vocês fizeram um ótimo trabalho! Agradecemos a parceria e esperamos trabalhar juntos novamente em breve.',
-    images: [feedbackImg3, feedbackImg1, feedbackImg2]
+    clientName: 'Cliente Do Saudosa Maloca',
+    eventType: 'Festival de Samba',
+    feedback: 'Trabalhar com a Confidence Eventos no nosso evento foi uma experiência de total tranquilidade. A qualidade da mão de obra é notável. Desde a segurança, que manteve tudo sob controle com discrição e eficiência, até os carregadores e a equipe de limpeza, que foram incrivelmente ágeis e organizados. Eles são sinônimo de profissionalismo e pontualidade. Agradecemos por tornarem a logística do nosso evento impecável!',
+    images: [saudosaImg1, saudosaImg2, saudosaImg3, saudosaImg4]
   }
 ];
 

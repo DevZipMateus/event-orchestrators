@@ -79,7 +79,7 @@ const ServicePage = () => {
 
       {/* Hero Section */}
       <section className="pt-20">
-        <div className="relative h-[50vh] min-h-[400px] overflow-hidden">
+        <div className="relative h-[40vh] sm:h-[45vh] md:h-[50vh] min-h-[300px] sm:min-h-[350px] lg:min-h-[400px] overflow-hidden">
           <img
             src={heroImage}
             alt={service.title}
@@ -91,16 +91,17 @@ const ServicePage = () => {
             <div className="section-container">
               <Link 
                 to="/" 
-                className="inline-flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors mb-4"
+                className="inline-flex items-center gap-1.5 sm:gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors mb-2 sm:mb-4 text-sm sm:text-base"
               >
-                <ArrowLeft className="w-5 h-5" />
-                Voltar para a página inicial
+                <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="hidden xs:inline">Voltar para a página inicial</span>
+                <span className="xs:hidden">Voltar</span>
               </Link>
-              <p className="text-primary-foreground/70 text-lg mb-2">Confidence Eventos</p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground mb-4">
+              <p className="text-primary-foreground/70 text-sm sm:text-base lg:text-lg mb-1 sm:mb-2">Confidence Eventos</p>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold text-primary-foreground mb-2 sm:mb-4 leading-tight">
                 {service.title}
               </h1>
-              <p className="text-xl text-primary-foreground/90 max-w-2xl">
+              <p className="text-sm sm:text-base lg:text-xl text-primary-foreground/90 max-w-2xl line-clamp-2 sm:line-clamp-none">
                 {service.heroTagline}
               </p>
             </div>
@@ -111,50 +112,51 @@ const ServicePage = () => {
       {/* Service Description */}
       <section className="section-padding">
         <div className="section-container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
             {/* Text Content */}
             <div className="order-2 lg:order-1">
-              <h2 className="heading-secondary mb-6">Sobre o Serviço</h2>
-              <div className="prose prose-lg text-muted-foreground max-w-none">
+              <h2 className="heading-secondary mb-4 sm:mb-6">Sobre o Serviço</h2>
+              <div className="prose prose-sm sm:prose-base lg:prose-lg text-muted-foreground max-w-none">
                 {service.fullDescription.split('\n\n').map((paragraph, index) => (
-                  <p key={index} className="mb-4 leading-relaxed">
+                  <p key={index} className="mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base">
                     {paragraph}
                   </p>
                 ))}
               </div>
 
               {/* Offerings List */}
-              <div className="mt-8">
-                <h3 className="font-heading font-semibold text-lg mb-4">O que oferecemos</h3>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div className="mt-6 sm:mt-8">
+                <h3 className="font-heading font-semibold text-base sm:text-lg mb-3 sm:mb-4">O que oferecemos</h3>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                   {service.offerings.map((offering, index) => (
-                    <li key={index} className="flex items-center gap-3">
-                      <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-                        <Check className="w-4 h-4 text-primary-foreground" />
+                    <li key={index} className="flex items-center gap-2 sm:gap-3">
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                        <Check className="w-3 h-3 sm:w-4 sm:h-4 text-primary-foreground" />
                       </div>
-                      <span className="text-foreground">{offering}</span>
+                      <span className="text-sm sm:text-base text-foreground">{offering}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               {/* CTA Button */}
-              <div className="mt-8">
+              <div className="mt-6 sm:mt-8">
                 <a
                   href={`https://wa.me/5511999857035?text=${encodeURIComponent(`Olá! Gostaria de uma cotação para o serviço de ${service.title}.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-primary inline-flex items-center gap-2"
+                  className="btn-primary inline-flex items-center gap-2 text-sm sm:text-base"
                 >
-                  Fale agora com um de nossos especialistas
-                  <ArrowRight className="w-5 h-5" />
+                  <span className="hidden sm:inline">Fale agora com um de nossos especialistas</span>
+                  <span className="sm:hidden">Fale com um especialista</span>
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                 </a>
               </div>
             </div>
 
             {/* Image */}
             <div className="order-1 lg:order-2">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+              <div className="aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg sm:shadow-xl">
                 <img
                   src={detailImage}
                   alt={`${service.title} - Detalhe`}

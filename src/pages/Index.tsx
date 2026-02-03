@@ -131,14 +131,14 @@ const Index = () => {
 
             {/* Services Grid */}
             <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 flex-1"
+              className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 flex-1"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
               variants={staggerContainer}
             >
               {services.map((service, index) => (
-                <motion.div key={service.id} variants={scaleIn}>
+                <motion.div key={service.id} variants={scaleIn} className="h-full">
                   <ServiceCard service={service} />
                 </motion.div>
               ))}
@@ -151,14 +151,14 @@ const Index = () => {
       <section className="section-padding bg-secondary overflow-hidden">
         <div className="section-container">
           <motion.div 
-            className="text-center mb-12"
+            className="text-center mb-8 sm:mb-10 lg:mb-12"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeInUp}
           >
-            <h2 className="heading-secondary mb-4">Por Que Nos Escolher</h2>
-            <p className="text-muted-foreground max-w-3xl mx-auto">
+            <h2 className="heading-secondary mb-3 sm:mb-4">Por Que Nos Escolher</h2>
+            <p className="text-sm sm:text-base text-muted-foreground max-w-3xl mx-auto px-4 sm:px-0">
               A Confidence Eventos se destaca pela excelência na organização e execução de eventos corporativos. 
               Nossa equipe qualificada, comprometimento com a sustentabilidade e atenção aos detalhes garantem 
               que seu evento seja um sucesso completo.
@@ -166,64 +166,64 @@ const Index = () => {
           </motion.div>
 
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
             variants={staggerContainer}
           >
-            <motion.div className="text-center p-6" variants={fadeInUp}>
+            <motion.div className="text-center p-3 sm:p-4 lg:p-6" variants={fadeInUp}>
               <motion.div 
-                className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4"
+                className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <Users className="w-8 h-8 text-primary-foreground" />
+                <Users className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-primary-foreground" />
               </motion.div>
-              <h3 className="font-heading font-semibold text-lg mb-2">Equipe Especializada</h3>
-              <p className="text-sm text-muted-foreground">
+              <h3 className="font-heading font-semibold text-sm sm:text-base lg:text-lg mb-1.5 sm:mb-2">Equipe Especializada</h3>
+              <p className="text-xs sm:text-sm text-muted-foreground">
                 Profissionais qualificados e experientes para garantir a excelência do seu evento.
               </p>
             </motion.div>
 
-            <motion.div className="text-center p-6" variants={fadeInUp}>
+            <motion.div className="text-center p-3 sm:p-4 lg:p-6" variants={fadeInUp}>
               <motion.div 
-                className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4"
+                className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <Award className="w-8 h-8 text-primary-foreground" />
+                <Award className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-primary-foreground" />
               </motion.div>
-              <h3 className="font-heading font-semibold text-lg mb-2">Planejamento Completo</h3>
-              <p className="text-sm text-muted-foreground">
+              <h3 className="font-heading font-semibold text-sm sm:text-base lg:text-lg mb-1.5 sm:mb-2">Planejamento Completo</h3>
+              <p className="text-xs sm:text-sm text-muted-foreground">
                 Organização detalhada com cronogramas, orçamentos e gestão eficiente de recursos.
               </p>
             </motion.div>
 
-            <motion.div className="text-center p-6" variants={fadeInUp}>
+            <motion.div className="text-center p-3 sm:p-4 lg:p-6" variants={fadeInUp}>
               <motion.div 
-                className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4"
+                className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <Handshake className="w-8 h-8 text-primary-foreground" />
+                <Handshake className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-primary-foreground" />
               </motion.div>
-              <h3 className="font-heading font-semibold text-lg mb-2">Suporte Contínuo</h3>
-              <p className="text-sm text-muted-foreground">
+              <h3 className="font-heading font-semibold text-sm sm:text-base lg:text-lg mb-1.5 sm:mb-2">Suporte Contínuo</h3>
+              <p className="text-xs sm:text-sm text-muted-foreground">
                 Acompanhamento personalizado durante todo o processo, do planejamento à execução.
               </p>
             </motion.div>
 
-            <motion.div className="text-center p-6" variants={fadeInUp}>
+            <motion.div className="text-center p-3 sm:p-4 lg:p-6" variants={fadeInUp}>
               <motion.div 
-                className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4"
+                className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <Building2 className="w-8 h-8 text-primary-foreground" />
+                <Building2 className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-primary-foreground" />
               </motion.div>
-              <h3 className="font-heading font-semibold text-lg mb-2">Compromisso Ambiental</h3>
-              <p className="text-sm text-muted-foreground">
+              <h3 className="font-heading font-semibold text-sm sm:text-base lg:text-lg mb-1.5 sm:mb-2">Compromisso Ambiental</h3>
+              <p className="text-xs sm:text-sm text-muted-foreground">
                 Eventos com práticas sustentáveis e responsabilidade socioambiental.
               </p>
             </motion.div>
@@ -238,7 +238,7 @@ const Index = () => {
       <section className="section-dark section-padding overflow-hidden">
         <div className="section-container">
           <motion.h2 
-            className="heading-secondary text-center mb-12"
+            className="heading-secondary text-center mb-8 sm:mb-10 lg:mb-12"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -248,7 +248,7 @@ const Index = () => {
           </motion.h2>
           
           <motion.div 
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8"
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 lg:gap-8"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
@@ -257,12 +257,12 @@ const Index = () => {
             {partners.map((partner) => (
               <motion.div 
                 key={partner.id} 
-                className="flex items-center justify-center p-6 bg-primary-foreground/10 rounded-lg hover:bg-primary-foreground/20 transition-colors"
+                className="flex items-center justify-center p-3 sm:p-4 lg:p-6 bg-primary-foreground/10 rounded-lg hover:bg-primary-foreground/20 transition-colors"
                 variants={scaleIn}
                 whileHover={{ scale: 1.05, y: -5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <span className="text-sm font-medium text-primary-foreground/80 text-center">
+                <span className="text-xs sm:text-sm font-medium text-primary-foreground/80 text-center">
                   {partner.name}
                 </span>
               </motion.div>
@@ -275,34 +275,34 @@ const Index = () => {
       <section className="section-padding overflow-hidden">
         <div className="section-container">
           <motion.div 
-            className="max-w-3xl mx-auto text-center"
+            className="max-w-3xl mx-auto text-center px-4 sm:px-0"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeInUp}
           >
-            <h2 className="heading-secondary mb-6">Trabalhe Conosco</h2>
-            <p className="text-lg text-muted-foreground mb-8">
+            <h2 className="heading-secondary mb-4 sm:mb-6">Trabalhe Conosco</h2>
+            <p className="text-sm sm:text-base lg:text-lg text-muted-foreground mb-6 sm:mb-8">
               Somos apaixonados por eventos e buscamos pessoas que compartilhem dessa energia.
             </p>
             <motion.div 
-              className="space-y-4"
+              className="space-y-3 sm:space-y-4"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.5 }}
             >
-              <p className="text-foreground">
+              <p className="text-sm sm:text-base text-foreground">
                 Envie seu currículo para{' '}
                 <motion.a 
                   href="mailto:rh@confidenceeventos.com.br" 
-                  className="text-primary font-medium hover:underline"
+                  className="text-primary font-medium hover:underline break-all sm:break-normal"
                   whileHover={{ scale: 1.05 }}
                 >
                   rh@confidenceeventos.com.br
                 </motion.a>
               </p>
-              <p className="text-foreground">
+              <p className="text-sm sm:text-base text-foreground">
                 ou entre em contato pelo WhatsApp{' '}
                 <motion.a 
                   href="https://wa.me/5511999857035" 

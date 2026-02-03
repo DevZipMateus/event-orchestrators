@@ -30,17 +30,17 @@ const Header = () => {
       }`}
     >
       <nav className="section-container">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 sm:h-18 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src={logo} alt="Confidence Eventos" className="h-12 w-auto" />
+            <img src={logo} alt="Confidence Eventos" className="h-9 sm:h-10 lg:h-12 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-4 lg:gap-8">
             <Link
               to="/"
-              className="font-medium text-foreground hover:text-primary transition-colors"
+              className="font-medium text-sm lg:text-base text-foreground hover:text-primary transition-colors"
             >
               Início
             </Link>
@@ -50,7 +50,7 @@ const Header = () => {
               <button
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
                 onMouseEnter={() => setIsServicesOpen(true)}
-                className="flex items-center gap-1 font-medium text-foreground hover:text-primary transition-colors"
+                className="flex items-center gap-1 font-medium text-sm lg:text-base text-foreground hover:text-primary transition-colors"
               >
                 Serviços
                 <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
@@ -58,14 +58,14 @@ const Header = () => {
 
               {isServicesOpen && (
                 <div
-                  className="absolute top-full left-0 mt-2 w-64 bg-popover border border-border rounded-lg shadow-xl py-2 z-50"
+                  className="absolute top-full left-0 mt-2 w-56 lg:w-64 bg-popover border border-border rounded-lg shadow-xl py-2 z-50"
                   onMouseLeave={() => setIsServicesOpen(false)}
                 >
                   {services.map((service) => (
                     <Link
                       key={service.id}
                       to={`/${service.slug}`}
-                      className="block px-4 py-2 text-sm text-popover-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                      className="block px-4 py-2 text-xs sm:text-sm text-popover-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
                     >
                       {service.title}
                     </Link>
@@ -87,7 +87,7 @@ const Header = () => {
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 text-foreground"
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
           </button>
         </div>
 

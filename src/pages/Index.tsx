@@ -7,6 +7,7 @@ import WhatsAppButton from '@/components/WhatsAppButton';
 import HeroCarousel from '@/components/HeroCarousel';
 import ServiceCard from '@/components/ServiceCard';
 import ContactForm from '@/components/ContactForm';
+import ClientFeedbackSection from '@/components/ClientFeedbackSection';
 import { services } from '@/data/services';
 import servicesPerson from '@/assets/services-person.png';
 
@@ -229,6 +230,9 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Client Feedback Section */}
+      <ClientFeedbackSection />
 
       {/* Partners Section */}
       <section className="section-dark section-padding overflow-hidden">

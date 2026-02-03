@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import { useParams, useLocation, Navigate } from 'react-router-dom';
-import { ArrowRight, Check } from 'lucide-react';
+import { useParams, useLocation, Navigate, Link } from 'react-router-dom';
+import { ArrowRight, ArrowLeft, Check } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
@@ -89,6 +89,13 @@ const ServicePage = () => {
           
           <div className="absolute inset-0 flex items-center">
             <div className="section-container">
+              <Link 
+                to="/" 
+                className="inline-flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors mb-4"
+              >
+                <ArrowLeft className="w-5 h-5" />
+                Voltar para a página inicial
+              </Link>
               <p className="text-primary-foreground/70 text-lg mb-2">Confidence Eventos</p>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground mb-4">
                 {service.title}
@@ -164,6 +171,19 @@ const ServicePage = () => {
 
       {/* Contact Form */}
       <ContactForm serviceName={service.title} />
+
+      {/* Back Button Bottom */}
+      <section className="section-padding bg-secondary">
+        <div className="section-container text-center">
+          <Link 
+            to="/" 
+            className="btn-primary inline-flex items-center gap-2"
+          >
+            <ArrowLeft className="w-5 h-5" />
+            Voltar para a página inicial
+          </Link>
+        </div>
+      </section>
 
       <Footer />
       <WhatsAppButton />

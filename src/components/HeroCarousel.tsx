@@ -51,6 +51,7 @@ const HeroCarousel = () => {
           src={imageUrl}
           alt={currentService.title}
           className="w-full h-full object-cover transition-all duration-700"
+          style={{ objectPosition: 'center 30%' }}
           key={currentIndex}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/50 to-transparent" />
